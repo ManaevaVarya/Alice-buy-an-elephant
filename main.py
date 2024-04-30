@@ -40,7 +40,9 @@ def handle_dialog(req_json, response):
     if any(map(lambda word: word in req_json["request"]["command"].lower(), ("ладно",
                                                                              "куплю",
                                                                              "хорошо",
-                                                                             "покупаю"))):
+                                                                             "покупаю",
+                                                                             "Я покупаю",
+                                                                             "Я куплю"))):
         response["response"]["text"] = "Слона можно найти на Яндекс.Маркете!"
         response["response"]["end_session"] = True
         return
